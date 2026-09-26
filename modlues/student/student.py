@@ -23,3 +23,22 @@ class studentclass:
     def setusernameandpassword(self, email, password):
         self.email_address = email
         self.password = password
+
+
+    def setbasicDetails(self, full_name, dob, age, gender, mobile_number, preferred_language, school_college_name, class_grade, board_curriculum, academic_year):
+        '''
+        This method sets the basic education details of the student.
+        '''
+        self.full_name = full_name
+        self.dob = dob
+        self.age = age
+        self.gender = gender
+        self.mobile_number = mobile_number
+        if len(mobile_number) != 10:
+            print("Invalid mobile number. Please enter a 10-digit mobile number.")
+            return
+        self.preferred_language = preferred_language
+        self.school_college_name = school_college_name
+        self.class_grade = class_grade
+        self.board_curriculum = board_curriculum
+        self.academic_year = academic_year    
