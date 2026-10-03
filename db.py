@@ -19,18 +19,7 @@ cursor.execute("""
     )
 """)
 
-cursor.execute("""
-    insert into student values(
-        104,
-        'neethu',
-        '15-01-2007',
-        19,
-        'female',
-        7012273121,
-        'abcde123@gmail.com',
-        'qwertyu'
-    )
-""")
+
  
 # Save changes
 conn.commit()
