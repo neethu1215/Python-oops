@@ -42,3 +42,38 @@ class studentclass:
         self.class_grade = class_grade
         self.board_curriculum = board_curriculum
         self.academic_year = academic_year    
+    def savetodb(self):
+        import sqlite3
+        connection = sqlite3.connect("tution.db")
+        cursor = connection.cursor()
+        cursor.execute("""
+             
+             insert into student(
+                    name,
+                    dob,
+                    age,
+                    gender,
+                    mobile,
+                    email,
+                    password,
+                    school_college_name,
+                    class_grade,
+                    board_curriculam,
+                    academic_year
+                    ) values (?,?,?,?,?,?,?,?,?,?,?,?)                
+            """,
+            (self.full_name,
+            self.dob,
+            self.age,
+            self.gender,
+            self.mobile_number,
+            self.email_address,
+            self.password,
+            self.preferred_language,
+            self.school_college_name,
+            self.class_grade,
+            self.board_curriculum,
+            self.academic_year
+            ))
+        connection.commit()
+        connection.close()
